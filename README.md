@@ -13,6 +13,7 @@ It only Masks the response of GET requests.
 * Log all incoming requests and responses in human-readable format.
 * Simple, only use standard library besides a logger.
 * Graceful shutdown.
+* Support for https target servers.
 
 ## How to Set Up
 #### Prerequisites
@@ -70,7 +71,7 @@ curl -X GET -v http://localhost:8081/get
   * Compresses data.
   * More testing with the mask to avoid leaks.
 * Healthcheck, readiness endpoint.
-* TLS support.
+* Expose the reverse proxy with TLS support.
 * Add Timeout configuration to the reverse proxy.
 * Metrics.
 * Benchmarking and performance testing:
