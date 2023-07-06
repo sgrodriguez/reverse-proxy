@@ -1,16 +1,16 @@
 # Reverse Proxy
 ## Description
-This is a simple reverse proxy that could block request based in a list of blockers.
-Also this reverse proxy have the capability to mask sensitive information in response body.
-It only Mask the response of GET requests.
+This simple reverse proxy could block requests based on a list of blockers.
+Also, this reverse proxy has the capability to mask sensitive information in the response body.
+It only Masks the response of GET requests.
 
 ## Features
 
 * Set blocker list in a configuration file.
-* Blocker list includes: MethodBlocker, PathBlocker, ParamBlocker and HeaderBlocker.
+* Blocker list includes MethodBlocker, PathBlocker, ParamBlocker, and HeaderBlocker.
 * Includes two maskers: CreditCardMasker, EmailMasker.
 * Easy to extend with new blockers and maskers.
-* Log all incoming request and response in human readable format.
+* Log all incoming requests and responses in human-readable format.
 * Simple, only use standard library besides a logger.
 * Graceful shutdown.
 
@@ -21,7 +21,7 @@ It only Mask the response of GET requests.
 ### Configuration
 The app uses a configuration file in TOML format.
 The configuration path is set via flags when running the app.
-If non is provided the app will use an example configuration file located in internal/config/example_config.toml
+The app will use an example configuration file in internal/config/example_config.toml if not provided
 
 Toml example:
 ```
@@ -63,7 +63,7 @@ After running make example, you can test the reverse proxy with the target_serve
 curl -X GET -v http://localhost:8081/get 
 ```
 
-## Future Work - Nice To have
+## Future Work - Nice To Have
 * In order to be production ready it needs more work with:
   * Streaming.
   * Websockets.
@@ -76,7 +76,7 @@ curl -X GET -v http://localhost:8081/get
 * Benchmarking and performance testing:
   * Improve the mask regexes with others [lib](https://pkg.go.dev/github.com/flier/gohs/hyperscan) [lib1] (https://github.com/google/re2)
   * Check blockers concurrently.
-* Add more testcases of strange and edgy cases.
+* Add more test cases of strange and edgy cases.
 
 ## Contributors
 * [sgrodriguez](https://github.com/sgrodriguez)
