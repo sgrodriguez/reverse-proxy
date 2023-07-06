@@ -1,0 +1,13 @@
+TargetURL = "http://localhost:8080"
+ReverseProxyPort = 8081
+[HeaderBlocker]
+  [HeaderBlocker.HeaderMap]
+    X-Blocker = "Block"
+    Authorization = "Secret"
+[ParamBlocker]
+  [ParamBlocker.ParamsMap]
+    apikey = "token"
+[PathBlocker]
+  path = ["/admin", "/private"]
+[MethodBlocker]
+  method = ["POST", "PUT"]
